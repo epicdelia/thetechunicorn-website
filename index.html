@@ -1,1 +1,166 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tech Unicorn | Software Studio for Startups</title>
+    <meta name="description" content="We build software and scale startups. From MVP development to growth strategy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0d0d1a;
+            --bg-card: #141428;
+            --bg-elevated: #1a1a35;
+            --text-white: #ffffff;
+            --text-gray: #94949e;
+            --text-muted: #6b6b78;
+            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
+            --accent-pink: #ec4899;
+            --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
+            --border-subtle: rgba(255,255,255,0.06);
+            --glow: 0 0 60px rgba(139, 92, 246, 0.15);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-white); line-height: 1.6; overflow-x: hidden; }
+        .bg-gradient { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.15), transparent), radial-gradient(ellipse 60% 40% at 100% 0%, rgba(59, 130, 246, 0.1), transparent), radial-gradient(ellipse 60% 40% at 0% 100%, rgba(236, 72, 153, 0.08), transparent); pointer-events: none; z-index: 0; }
+        nav { position: fixed; top: 0; left: 0; right: 0; padding: 1.25rem 6%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(13, 13, 26, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle); }
+        .logo { font-family: 'Space Mono', monospace; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.1em; color: var(--text-white); display: flex; align-items: center; gap: 0.5rem; }
+        .logo-icon { width: 32px; height: 32px; background: var(--accent-gradient); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-gray); font-size: 0.875rem; font-weight: 500; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--text-white); }
+        .nav-cta { padding: 0.625rem 1.25rem; background: var(--accent-purple); color: var(--text-white); text-decoration: none; font-size: 0.875rem; font-weight: 600; border-radius: 8px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3); }
+        .nav-cta:hover { background: #9d6fff; transform: translateY(-1px); }
+        .hero { min-height: 100vh; position: relative; display: flex; align-items: center; padding: 0 6%; z-index: 1; }
+        .hero-content { max-width: 720px; padding-top: 80px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 100px; font-size: 0.8rem; color: var(--text-gray); margin-bottom: 2rem; }
+        .hero-badge-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .hero h1 { font-size: clamp(2.75rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+        .hero h1 .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-description { font-size: 1.25rem; color: var(--text-gray); margin-bottom: 2.5rem; line-height: 1.7; max-width: 580px; }
+        .hero-buttons { display: flex; gap: 1rem; margin-bottom: 4rem; }
+        .btn-primary { padding: 1rem 2rem; background: var(--accent-gradient); color: var(--text-white); text-decoration: none; font-weight: 600; font-size: 0.95rem; border-radius: 10px; transition: all 0.2s ease; box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4); }
+        .btn-secondary { padding: 1rem 2rem; background: var(--bg-card); color: var(--text-white); text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 1px solid var(--border-subtle); border-radius: 10px; transition: all 0.2s ease; }
+        .btn-secondary:hover { border-color: rgba(255,255,255,0.2); background: var(--bg-elevated); }
+        .metrics-bar { display: flex; gap: 3rem; }
+        .metric { display: flex; flex-direction: column; }
+        .metric-value { font-size: 2rem; font-weight: 700; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .metric-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
+        section { position: relative; z-index: 1; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-purple); margin-bottom: 1rem; }
+        .section-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.02em; }
+        .section-header p { color: var(--text-gray); font-size: 1.1rem; max-width: 550px; margin: 0 auto; }
+        .services { padding: 8rem 6%; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .service-card { padding: 2rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-subtle); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent-gradient); opacity: 0; transition: opacity 0.3s ease; }
+        .service-card:hover { transform: translateY(-4px); border-color: rgba(139, 92, 246, 0.3); box-shadow: var(--glow); }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon { width: 48px; height: 48px; background: var(--bg-elevated); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1.25rem; }
+        .service-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .service-card p { color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; }
+        .portfolio { padding: 8rem 6%; background: linear-gradient(180deg, transparent 0%, rgba(20, 20, 40, 0.5) 100%); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; }
+        .portfolio-card { background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-subtle); overflow: hidden; transition: all 0.3s ease; display: flex; flex-direction: column; }
+        .portfolio-card:hover { transform: translateY(-4px); border-color: rgba(139, 92, 246, 0.3); box-shadow: var(--glow); }
+        .portfolio-card.large { grid-column: span 8; }
+        .portfolio-card.small { grid-column: span 4; }
+        .portfolio-card.medium { grid-column: span 6; }
+        .portfolio-visual { height: 200px; background: var(--bg-elevated); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .portfolio-card.large .portfolio-visual { height: 280px; }
+        .portfolio-visual-icon { font-size: 4rem; opacity: 0.3; }
+        .portfolio-visual-pattern { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 49%, rgba(139, 92, 246, 0.1) 50%, transparent 51%), linear-gradient(transparent 49%, rgba(139, 92, 246, 0.1) 50%, transparent 51%); background-size: 30px 30px; }
+        .portfolio-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .portfolio-tag { display: inline-block; padding: 0.25rem 0.625rem; background: rgba(139, 92, 246, 0.15); color: var(--accent-purple); font-size: 0.7rem; font-weight: 600; border-radius: 50px; margin-bottom: 0.75rem; width: fit-content; text-transform: uppercase; letter-spacing: 0.05em; }
+        .portfolio-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .portfolio-card.large h3 { font-size: 1.5rem; }
+        .portfolio-card p { color: var(--text-gray); font-size: 0.875rem; line-height: 1.6; flex-grow: 1; }
+        .portfolio-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .portfolio-tech span { padding: 0.25rem 0.5rem; background: var(--bg-dark); color: var(--text-muted); font-size: 0.7rem; border-radius: 4px; font-family: 'Space Mono', monospace; }
+        .cta { padding: 10rem 6%; text-align: center; position: relative; }
+        .cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%); pointer-events: none; }
+        .cta h2 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.02em; position: relative; }
+        .cta p { color: var(--text-gray); font-size: 1.15rem; max-width: 500px; margin: 0 auto 2.5rem; position: relative; }
+        .cta-email { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; color: var(--text-white); text-decoration: none; font-weight: 600; padding: 1rem 2rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; transition: all 0.2s ease; position: relative; }
+        .cta-email:hover { border-color: var(--accent-purple); box-shadow: var(--glow); }
+        .cta-email svg { width: 20px; height: 20px; color: var(--accent-purple); }
+        footer { padding: 2.5rem 6%; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); }
+        .footer-copy { font-size: 0.85rem; color: var(--text-muted); }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social a { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 10px; color: var(--text-gray); transition: all 0.2s ease; }
+        .footer-social a:hover { color: var(--text-white); border-color: var(--accent-purple); }
+        .footer-social svg { width: 18px; height: 18px; }
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .portfolio-card.large, .portfolio-card.small, .portfolio-card.medium { grid-column: span 6; } }
+        @media (max-width: 768px) { nav { padding: 1rem 5%; } .nav-links { display: none; } .hero { padding: 0 5%; } .hero-content { padding-top: 120px; } .hero-buttons { flex-direction: column; } .metrics-bar { flex-wrap: wrap; gap: 2rem; } .services, .portfolio, .cta { padding: 5rem 5%; } .services-grid { grid-template-columns: 1fr; } .portfolio-card.large, .portfolio-card.small, .portfolio-card.medium { grid-column: span 12; } footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 5%; } }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <nav>
+        <div class="logo"><div class="logo-icon">🦄</div>TECHUNICORN</div>
+        <ul class="nav-links"><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#contact">Contact</a></li></ul>
+        <a href="mailto:delia@thetechunicorn.com" class="nav-cta">Start a Project</a>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge"><span class="hero-badge-dot"></span>Available for new projects</div>
+            <h1>We Build <span class="gradient-text">Software</span> and Scale <span class="gradient-text">Startups</span></h1>
+            <p class="hero-description">A boutique studio helping founders go from idea to launch. MVP development, AI integration, and growth strategies that actually work.</p>
+            <div class="hero-buttons">
+                <a href="mailto:delia@thetechunicorn.com" class="btn-primary">Start a Project →</a>
+                <a href="#work" class="btn-secondary">View Our Work</a>
+            </div>
+            <div class="metrics-bar">
+                <div class="metric"><span class="metric-value">20+</span><span class="metric-label">Products Shipped</span></div>
+                <div class="metric"><span class="metric-value">361K</span><span class="metric-label">Audience Built</span></div>
+                <div class="metric"><span class="metric-value">$2M+</span><span class="metric-label">Revenue Generated</span></div>
+            </div>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <div class="section-header"><span class="section-label">Services</span><h2>What We Build</h2><p>End-to-end services for startups ready to ship products and scale</p></div>
+        <div class="services-grid">
+            <div class="service-card"><div class="service-icon">⚡</div><h3>MVP Development</h3><p>Go from idea to launched product in weeks. Production-ready code with scalable architecture.</p></div>
+            <div class="service-card"><div class="service-icon">🤖</div><h3>AI Integration</h3><p>Add AI capabilities to your product—chatbots, agents, and custom models that actually work.</p></div>
+            <div class="service-card"><div class="service-icon">📈</div><h3>Growth Strategy</h3><p>Data-driven tactics for user acquisition. Content, viral loops, and audience building.</p></div>
+            <div class="service-card"><div class="service-icon">🎯</div><h3>Product Strategy</h3><p>Validate ideas, define roadmaps, and prioritize features. Build the right thing.</p></div>
+            <div class="service-card"><div class="service-icon">📱</div><h3>Web & Mobile Apps</h3><p>Full-stack development. React, Node, Python, Swift—the right stack for your needs.</p></div>
+            <div class="service-card"><div class="service-icon">🚀</div><h3>Launch Support</h3><p>Product Hunt launches, content campaigns, and GTM strategy to make noise.</p></div>
+        </div>
+    </section>
+    <section class="portfolio" id="work">
+        <div class="section-header"><span class="section-label">Portfolio</span><h2>Software We've Built</h2><p>A selection of products we've shipped for clients and ourselves</p></div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card large"><div class="portfolio-visual"><div class="portfolio-visual-pattern"></div><span class="portfolio-visual-icon">🎨</span></div><div class="portfolio-content"><span class="portfolio-tag">SaaS Platform</span><h3>AI Content Studio</h3><p>End-to-end content creation platform with AI writing, scheduling, and analytics. Built for creators scaling their content operation.</p><div class="portfolio-tech"><span>React</span><span>Node.js</span><span>OpenAI</span><span>PostgreSQL</span></div></div></div>
+            <div class="portfolio-card small"><div class="portfolio-visual"><div class="portfolio-visual-pattern"></div><span class="portfolio-visual-icon">🌍</span></div><div class="portfolio-content"><span class="portfolio-tag">Mobile App</span><h3>Nomad Tracker</h3><p>Travel planning and expense tracking. 10K+ downloads.</p><div class="portfolio-tech"><span>React Native</span><span>Firebase</span></div></div></div>
+            <div class="portfolio-card small"><div class="portfolio-visual"><div class="portfolio-visual-pattern"></div><span class="portfolio-visual-icon">✨</span></div><div class="portfolio-content"><span class="portfolio-tag">Chrome Extension</span><h3>Quick Summarize</h3><p>AI-powered summarization for articles and videos.</p><div class="portfolio-tech"><span>TypeScript</span><span>Claude API</span></div></div></div>
+            <div class="portfolio-card medium"><div class="portfolio-visual"><div class="portfolio-visual-pattern"></div><span class="portfolio-visual-icon">🛠️</span></div><div class="portfolio-content"><span class="portfolio-tag">Developer Tool</span><h3>Deploy Bot</h3><p>Automated deployment pipeline. One-click deploys to AWS, Vercel, Railway.</p><div class="portfolio-tech"><span>Go</span><span>Docker</span><span>AWS</span></div></div></div>
+            <div class="portfolio-card medium"><div class="portfolio-visual"><div class="portfolio-visual-pattern"></div><span class="portfolio-visual-icon">💬</span></div><div class="portfolio-content"><span class="portfolio-tag">AI Agent</span><h3>Support Copilot</h3><p>AI customer support that handles 80% of tickets automatically.</p><div class="portfolio-tech"><span>Python</span><span>LangChain</span><span>Pinecone</span></div></div></div>
+        </div>
+    </section>
+    <section class="cta" id="contact">
+        <h2>Let's Build Together</h2>
+        <p>Have a startup idea? Need to ship faster? Let's talk about how we can help.</p>
+        <a href="mailto:delia@thetechunicorn.com" class="cta-email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            delia@thetechunicorn.com
+        </a>
+    </section>
+    <footer>
+        <div class="footer-copy">© 2025 The Tech Unicorn. All rights reserved.</div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/tech.unicorn/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.youtube.com/@Tech.Unicorn" target="_blank" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+            <a href="https://ca.linkedin.com/in/delialazarescu" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="https://twitter.com/tecaboricorn" target="_blank" title="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+    </footer>
+</body>
+</html>
