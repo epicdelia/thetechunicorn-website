@@ -3,131 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delia Talks | Speaker, Content Creator & Tech Entrepreneur</title>
-    <meta name="description" content="Keynote speaker, content creator, and tech entrepreneur. Inspiring audiences worldwide on innovation, entrepreneurship, and the future of technology.">
+    <title>The Tech Unicorn | We Build Vibecoded Apps</title>
+    <meta name="description" content="We turn your ideas into beautiful, functional apps using AI-powered vibecoding. Fast, affordable, and magical.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #0a0a0f;
-            --bg-card: #12121a;
-            --bg-elevated: #1a1a25;
+            --bg-card: #111118;
+            --bg-elevated: #1a1a24;
             --text-white: #ffffff;
-            --text-gray: #a0a0a0;
-            --text-muted: #6b6b78;
-            --accent-purple: #9b6dff;
-            --accent-pink: #ff6b9d;
-            --accent-blue: #6baaff;
-            --accent-gradient: linear-gradient(135deg, #9b6dff 0%, #ff6b9d 50%, #ffb86b 100%);
-            --border-subtle: rgba(255,255,255,0.08);
+            --text-gray: #9ca3af;
+            --text-muted: #6b7280;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-cyan: #06b6d4;
+            --accent-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%);
+            --border-subtle: rgba(255,255,255,0.06);
+            --glow: 0 0 60px rgba(168, 85, 247, 0.3);
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-white); line-height: 1.7; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-white); line-height: 1.7; overflow-x: hidden; }
         
-        .bg-gradient { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(155, 109, 255, 0.15), transparent), radial-gradient(ellipse 60% 40% at 100% 0%, rgba(255, 107, 157, 0.1), transparent); pointer-events: none; z-index: -1; }
+        .bg-gradient { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(168, 85, 247, 0.15), transparent), radial-gradient(ellipse 60% 40% at 100% 0%, rgba(236, 72, 153, 0.1), transparent), radial-gradient(ellipse 40% 30% at 0% 100%, rgba(6, 182, 212, 0.08), transparent); pointer-events: none; z-index: -1; }
         
-        nav { position: fixed; top: 0; left: 0; right: 0; padding: 1.5rem 6%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(10, 10, 15, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle); }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        nav { position: fixed; top: 0; left: 0; right: 0; padding: 1.25rem 6%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle); }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; }
+        .logo span { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .logo-icon { font-size: 1.6rem; }
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a { color: var(--text-gray); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a { color: var(--text-gray); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: var(--text-white); }
+        .nav-cta { background: var(--accent-gradient); color: white; padding: 0.7rem 1.5rem; border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: all 0.3s; }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--glow); }
         
-        .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 6% 4rem; }
-        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1400px; margin: 0 auto; width: 100%; }
-        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 600; line-height: 1.1; margin-bottom: 1.5rem; }
-        .hero-text h1 span { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero-text .tagline { font-size: 1.4rem; color: var(--text-gray); margin-bottom: 2rem; font-weight: 300; }
-        .hero-text p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 500px; }
-        .hero-buttons { display: flex; gap: 1rem; }
-        .btn { padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-block; }
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 6% 4rem; position: relative; }
+        .hero-content { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; max-width: 1400px; margin: 0 auto; width: 100%; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; color: var(--accent-purple); margin-bottom: 1.5rem; }
+        .hero-badge .dot { width: 8px; height: 8px; background: var(--accent-purple); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .hero-text h1 { font-family: 'Space Grotesk', sans-serif; font-size: 4.5rem; font-weight: 700; line-height: 1.05; margin-bottom: 1.5rem; }
+        .hero-text h1 .gradient { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-text p { color: var(--text-gray); font-size: 1.25rem; margin-bottom: 2.5rem; max-width: 540px; line-height: 1.8; }
+        .hero-buttons { display: flex; gap: 1rem; align-items: center; }
+        .btn { padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1rem; }
         .btn-primary { background: var(--accent-gradient); color: white; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(155, 109, 255, 0.3); }
-        .btn-secondary { border: 1px solid var(--border-subtle); color: var(--text-white); background: transparent; }
-        .btn-secondary:hover { background: var(--bg-elevated); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: var(--glow); }
+        .btn-secondary { border: 1px solid var(--border-subtle); color: var(--text-white); background: rgba(255,255,255,0.03); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
         
-        .hero-image { position: relative; }
-        .hero-image img { width: 100%; max-width: 450px; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
-        .hero-image::before { content: ''; position: absolute; top: -20px; right: -20px; width: 100%; height: 100%; border: 2px solid var(--accent-purple); border-radius: 20px; opacity: 0.3; }
+        .hero-visual { position: relative; display: flex; justify-content: center; }
+        .hero-image-container { position: relative; }
+        .hero-image { width: 400px; height: 500px; object-fit: cover; border-radius: 24px; box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
+        .floating-card { position: absolute; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 1rem 1.25rem; backdrop-filter: blur(10px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .floating-card.top { top: 10%; right: -60px; }
+        .floating-card.bottom { bottom: 15%; left: -80px; }
+        .floating-card .label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+        .floating-card .value { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
+        .floating-card .icon { font-size: 1.2rem; }
         
-        section { padding: 6rem 6%; }
+        section { padding: 7rem 6%; }
         .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
+        .section-label { display: inline-block; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.2); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; color: var(--accent-purple); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .section-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; margin-bottom: 1rem; font-weight: 700; }
         .section-header p { color: var(--text-gray); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
         
+        .what-we-do { background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .service-card { background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 2.5rem; transition: all 0.4s; position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent-gradient); opacity: 0; transition: opacity 0.3s; }
+        .service-card:hover { transform: translateY(-8px); border-color: rgba(168, 85, 247, 0.3); box-shadow: 0 30px 60px rgba(168, 85, 247, 0.1); }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
+        .service-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600; }
+        .service-card p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.7; }
+        
+        .how-it-works { background: var(--bg-card); }
+        .steps-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .step { text-align: center; position: relative; }
+        .step-number { width: 60px; height: 60px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; }
+        .step h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 0.75rem; }
+        .step p { color: var(--text-gray); font-size: 0.9rem; }
+        .step-line { position: absolute; top: 30px; left: 60%; width: 80%; height: 2px; background: linear-gradient(90deg, var(--accent-purple), transparent); }
+        .step:last-child .step-line { display: none; }
+        
+        .portfolio { background: var(--bg-dark); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+        .portfolio-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 24px; overflow: hidden; transition: all 0.4s; }
+        .portfolio-card:hover { transform: translateY(-8px); border-color: rgba(168, 85, 247, 0.3); }
+        .portfolio-image { height: 240px; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; }
+        .portfolio-image .mockup { font-size: 4rem; }
+        .portfolio-content { padding: 2rem; }
+        .portfolio-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; margin-bottom: 0.75rem; }
+        .portfolio-content p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 1rem; }
+        .portfolio-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .tag { background: rgba(168, 85, 247, 0.1); color: var(--accent-purple); padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.8rem; }
+        
         .about { background: var(--bg-card); }
-        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto; align-items: center; }
-        .about-text h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .about-text p { color: var(--text-gray); margin-bottom: 1.5rem; }
-        .about-stats { display: flex; gap: 3rem; margin-top: 2rem; }
-        .stat { text-align: center; }
-        .stat-number { font-family: 'Playfair Display', serif; font-size: 2.5rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .about-content { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; max-width: 1200px; margin: 0 auto; align-items: center; }
+        .about-image img { width: 100%; max-width: 450px; border-radius: 24px; box-shadow: 0 40px 80px rgba(0,0,0,0.4); }
+        .about-text h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2.8rem; margin-bottom: 1.5rem; font-weight: 700; }
+        .about-text p { color: var(--text-gray); margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; }
+        .about-stats { display: flex; gap: 3rem; margin-top: 2.5rem; }
+        .stat { text-align: left; }
+        .stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .stat-label { color: var(--text-muted); font-size: 0.9rem; }
         
-        .topics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .topic-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.5rem; transition: all 0.3s; }
-        .topic-card:hover { transform: translateY(-5px); border-color: var(--accent-purple); box-shadow: 0 20px 40px rgba(155, 109, 255, 0.1); }
-        .topic-icon { font-size: 3rem; margin-bottom: 1.5rem; }
-        .topic-card h3 { font-size: 1.4rem; margin-bottom: 1rem; }
-        .topic-card p { color: var(--text-gray); font-size: 0.95rem; }
+        .pricing { background: var(--bg-dark); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+        .pricing-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 2.5rem; text-align: center; transition: all 0.3s; }
+        .pricing-card.featured { border-color: var(--accent-purple); transform: scale(1.05); box-shadow: var(--glow); }
+        .pricing-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .pricing-card .price { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; font-weight: 700; margin: 1rem 0; }
+        .pricing-card .price span { font-size: 1rem; color: var(--text-muted); }
+        .pricing-card ul { list-style: none; margin: 1.5rem 0; text-align: left; }
+        .pricing-card li { padding: 0.5rem 0; color: var(--text-gray); font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; }
+        .pricing-card li::before { content: '✓'; color: var(--accent-purple); font-weight: bold; }
         
-        .speaking { background: var(--bg-card); }
-        .events-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .event-card { background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; display: flex; gap: 1.5rem; align-items: flex-start; transition: all 0.3s; }
-        .event-card:hover { border-color: var(--accent-pink); }
-        .event-date { background: var(--accent-gradient); padding: 1rem; border-radius: 12px; text-align: center; min-width: 80px; }
-        .event-date .month { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-        .event-date .day { font-size: 1.8rem; font-weight: 700; }
-        .event-info h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-        .event-info .venue { color: var(--accent-purple); font-size: 0.9rem; margin-bottom: 0.5rem; }
-        .event-info p { color: var(--text-muted); font-size: 0.9rem; }
+        .cta { background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%); text-align: center; padding: 8rem 6%; }
+        .cta-content { max-width: 700px; margin: 0 auto; }
+        .cta h2 { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; margin-bottom: 1.5rem; }
+        .cta p { color: var(--text-gray); font-size: 1.2rem; margin-bottom: 2.5rem; }
         
-        .software { background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%); }
-        .software-intro { text-align: center; max-width: 800px; margin: 0 auto 4rem; }
-        .software-intro p { color: var(--text-gray); font-size: 1.1rem; }
-        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .project-card { background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 20px; overflow: hidden; transition: all 0.3s; }
-        .project-card:hover { transform: translateY(-5px); border-color: var(--accent-blue); }
-        .project-image { height: 200px; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
-        .project-content { padding: 2rem; }
-        .project-content h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
-        .project-content p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 1rem; }
-        .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .project-tag { background: rgba(155, 109, 255, 0.1); color: var(--accent-purple); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; }
-        
-        .content { background: var(--bg-dark); }
-        .content-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .content-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; overflow: hidden; transition: all 0.3s; }
-        .content-card:hover { transform: translateY(-5px); }
-        .content-thumbnail { height: 180px; background: var(--bg-elevated); display: flex; align-items: center; justify-content: center; }
-        .content-thumbnail .play-icon { width: 60px; height: 60px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
-        .content-info { padding: 1.5rem; }
-        .content-info h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .content-info p { color: var(--text-muted); font-size: 0.9rem; }
-        
-        .contact { background: var(--bg-card); text-align: center; }
-        .contact-content { max-width: 600px; margin: 0 auto; }
-        .contact-content h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1.5rem; }
-        .contact-content p { color: var(--text-gray); margin-bottom: 2rem; font-size: 1.1rem; }
-        .contact-email { font-size: 1.5rem; color: var(--accent-purple); text-decoration: none; display: inline-block; margin-bottom: 2rem; }
-        .contact-email:hover { text-decoration: underline; }
-        .social-links { display: flex; justify-content: center; gap: 1.5rem; }
-        .social-link { width: 50px; height: 50px; background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-white); text-decoration: none; transition: all 0.3s; }
-        .social-link:hover { background: var(--accent-gradient); border-color: transparent; }
-        
-        footer { padding: 2rem 6%; text-align: center; border-top: 1px solid var(--border-subtle); }
+        footer { padding: 3rem 6%; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; }
+        .footer-logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; }
+        .footer-logo span { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         footer p { color: var(--text-muted); font-size: 0.9rem; }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a { color: var(--text-gray); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--text-white); }
         
-        @media (max-width: 968px) {
+        @media (max-width: 1024px) {
             .hero-content, .about-content { grid-template-columns: 1fr; text-align: center; }
             .hero-text h1 { font-size: 3rem; }
-            .hero-image { order: -1; }
-            .hero-image img { max-width: 350px; margin: 0 auto; display: block; }
-            .topics-grid, .events-grid, .projects-grid, .content-grid { grid-template-columns: 1fr; }
+            .hero-text p { margin: 0 auto 2rem; }
+            .hero-buttons { justify-content: center; }
+            .hero-visual { order: -1; margin-bottom: 2rem; }
+            .floating-card { display: none; }
+            .services-grid, .portfolio-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .steps-container { grid-template-columns: repeat(2, 1fr); }
+            .step-line { display: none; }
             .about-stats { justify-content: center; }
             .nav-links { display: none; }
+            footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
@@ -135,30 +157,176 @@
     <div class="bg-gradient"></div>
     
     <nav>
-        <div class="logo">Delia Talks</div>
+        <div class="logo">
+            <span class="logo-icon">🦄</span>
+            <span>The Tech Unicorn</span>
+        </div>
         <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#topics">Topics</a></li>
-            <li><a href="#speaking">Speaking</a></li>
-            <li><a href="#software">Software</a></li>
-            <li><a href="#content">Content</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#pricing">Pricing</a></li>
         </ul>
+        <a href="#cta" class="nav-cta">Start Your Project</a>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Hi, I'm <span>Delia</span></h1>
-                <p class="tagline">Speaker • Content Creator • Tech Entrepreneur</p>
-                <p>Inspiring audiences worldwide on innovation, entrepreneurship, and building the future of technology. From keynote stages to viral content, I help people embrace the possibilities of tech.</p>
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Now accepting new projects
+                </div>
+                <h1>We Build <span class="gradient">Vibecoded</span> Apps That Feel Like Magic</h1>
+                <p>Turn your idea into a beautiful, functional app in weeks—not months. We use AI-powered development to build faster, smarter, and more affordably.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Book Me to Speak</a>
-                    <a href="#software" class="btn btn-secondary">View My Work</a>
+                    <a href="#cta" class="btn btn-primary">Get a Free Quote →</a>
+                    <a href="#portfolio" class="btn btn-secondary">See Our Work</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop" alt="Delia - Speaker and Tech Entrepreneur">
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img src="https://deliatalks.com/wp-content/uploads/2024/02/Delia-Matterport-2-819x1024.jpg" alt="Delia - Founder of The Tech Unicorn" class="hero-image">
+                    <div class="floating-card top">
+                        <div class="label">Apps Launched</div>
+                        <div class="value"><span class="icon">🚀</span> 25+</div>
+                    </div>
+                    <div class="floating-card bottom">
+                        <div class="label">Client Satisfaction</div>
+                        <div class="value"><span class="icon">⭐</span> 100%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="what-we-do" id="services">
+        <div class="section-header">
+            <span class="section-label">What We Do</span>
+            <h2>Vibecoding: The Future of App Development</h2>
+            <p>We combine AI tools with human creativity to build apps 10x faster than traditional development.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">📱</span>
+                <h3>MVP Development</h3>
+                <p>Go from idea to working product in 2-4 weeks. Perfect for validating your startup concept without breaking the bank.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🎨</span>
+                <h3>Web Applications</h3>
+                <p>Beautiful, responsive web apps built with modern frameworks. Dashboards, SaaS platforms, and custom tools.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🤖</span>
+                <h3>AI Integration</h3>
+                <p>Add the power of AI to your app. Chatbots, content generation, smart automation, and more.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">⚡</span>
+                <h3>Rapid Prototyping</h3>
+                <p>Need to test an idea fast? We'll build a clickable prototype in days so you can get feedback immediately.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🔧</span>
+                <h3>App Upgrades</h3>
+                <p>Already have an app? We'll add new features, improve performance, or give it a fresh new look.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🚀</span>
+                <h3>Launch Support</h3>
+                <p>From deployment to app store submission, we handle the technical details so you can focus on growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <span class="section-label">How It Works</span>
+            <h2>From Idea to Launch in 4 Simple Steps</h2>
+        </div>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Discovery Call</h3>
+                <p>Tell us about your idea. We'll figure out the best approach together.</p>
+                <div class="step-line"></div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Design & Plan</h3>
+                <p>We create wireframes and a clear roadmap for your app.</p>
+                <div class="step-line"></div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Build & Iterate</h3>
+                <p>We vibecode your app with weekly demos and feedback loops.</p>
+                <div class="step-line"></div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Launch & Celebrate</h3>
+                <p>Your app goes live. We help you launch and support you after.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="section-header">
+            <span class="section-label">Our Work</span>
+            <h2>Apps We've Brought to Life</h2>
+            <p>Real projects built for real clients using vibecoding</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-image"><span class="mockup">📊</span></div>
+                <div class="portfolio-content">
+                    <h3>Startup Dashboard</h3>
+                    <p>Analytics platform for founders to track KPIs, runway, and growth metrics in one place.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Charts</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image"><span class="mockup">🛒</span></div>
+                <div class="portfolio-content">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Custom shopping experience with AI-powered product recommendations.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Stripe</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image"><span class="mockup">✍️</span></div>
+                <div class="portfolio-content">
+                    <h3>AI Content Writer</h3>
+                    <p>Tool for creators to generate blog posts, social content, and newsletters with AI.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">OpenAI</span>
+                        <span class="tag">SaaS</span>
+                        <span class="tag">Subscriptions</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image"><span class="mockup">📅</span></div>
+                <div class="portfolio-content">
+                    <h3>Booking System</h3>
+                    <p>Appointment scheduling app for service businesses with payments built in.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Calendar</span>
+                        <span class="tag">Payments</span>
+                        <span class="tag">SMS</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -166,220 +334,98 @@
     <section class="about" id="about">
         <div class="about-content">
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&h=500&fit=crop" alt="Speaking on stage" style="width: 100%; border-radius: 20px;">
+                <img src="https://deliatalks.com/wp-content/uploads/2024/02/HS-6-1024x1024.jpg" alt="Delia - Founder">
             </div>
             <div class="about-text">
-                <h3>Empowering Through Technology</h3>
-                <p>I'm a passionate advocate for innovation and entrepreneurship. With years of experience building tech products and sharing insights with global audiences, I bring energy, expertise, and actionable strategies to every engagement.</p>
-                <p>Whether I'm keynoting at a tech conference, creating content that reaches millions, or building software that solves real problems, my mission is simple: inspire people to embrace technology and create their own success stories.</p>
+                <span class="section-label">Meet the Founder</span>
+                <h2>Hi, I'm Delia 👋</h2>
+                <p>I started The Tech Unicorn because I believe everyone with a great idea deserves access to quality software development—without the massive price tag or 6-month timelines.</p>
+                <p>With AI-powered vibecoding, we can build apps faster and more affordably than ever before. I've helped dozens of founders and businesses bring their ideas to life, and I'd love to help you too.</p>
                 <div class="about-stats">
                     <div class="stat">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Apps Built</div>
+                    </div>
+                    <div class="stat">
                         <div class="stat-number">50+</div>
-                        <div class="stat-label">Speaking Events</div>
+                        <div class="stat-label">Happy Clients</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">1M+</div>
-                        <div class="stat-label">Content Views</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Products Built</div>
+                        <div class="stat-number">10x</div>
+                        <div class="stat-label">Faster Delivery</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="topics" id="topics">
+    <section class="pricing" id="pricing">
         <div class="section-header">
-            <h2>Speaking Topics</h2>
-            <p>Engaging talks that inspire action and drive results</p>
+            <span class="section-label">Pricing</span>
+            <h2>Simple, Transparent Pricing</h2>
+            <p>Choose the package that fits your needs</p>
         </div>
-        <div class="topics-grid">
-            <div class="topic-card">
-                <div class="topic-icon">🚀</div>
-                <h3>Startup Journey</h3>
-                <p>From idea to launch: practical strategies for building successful startups in today's competitive landscape.</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">$2,500<span>/project</span></div>
+                <ul>
+                    <li>Landing page or simple app</li>
+                    <li>1-2 week delivery</li>
+                    <li>Mobile responsive</li>
+                    <li>1 round of revisions</li>
+                    <li>Basic support</li>
+                </ul>
+                <a href="#cta" class="btn btn-secondary" style="width: 100%; justify-content: center;">Get Started</a>
             </div>
-            <div class="topic-card">
-                <div class="topic-icon">💡</div>
-                <h3>Innovation & AI</h3>
-                <p>How emerging technologies are reshaping industries and creating new opportunities for forward-thinking businesses.</p>
+            <div class="pricing-card featured">
+                <h3>Growth</h3>
+                <div class="price">$7,500<span>/project</span></div>
+                <ul>
+                    <li>Full web application</li>
+                    <li>3-4 week delivery</li>
+                    <li>User authentication</li>
+                    <li>Database & API</li>
+                    <li>3 rounds of revisions</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="#cta" class="btn btn-primary" style="width: 100%; justify-content: center;">Most Popular</a>
             </div>
-            <div class="topic-card">
-                <div class="topic-icon">📱</div>
-                <h3>Content & Personal Brand</h3>
-                <p>Building an authentic online presence that attracts opportunities and creates lasting impact.</p>
-            </div>
-            <div class="topic-card">
-                <div class="topic-icon">👩‍💻</div>
-                <h3>Women in Tech</h3>
-                <p>Breaking barriers and building inclusive tech communities that empower the next generation of leaders.</p>
-            </div>
-            <div class="topic-card">
-                <div class="topic-icon">🎯</div>
-                <h3>Product Development</h3>
-                <p>User-centered design and agile methodologies that turn ideas into products people love.</p>
-            </div>
-            <div class="topic-card">
-                <div class="topic-icon">📈</div>
-                <h3>Growth & Marketing</h3>
-                <p>Strategies for scaling startups and building sustainable growth engines.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="speaking" id="speaking">
-        <div class="section-header">
-            <h2>Speaking Engagements</h2>
-            <p>Upcoming and past events where I've shared insights</p>
-        </div>
-        <div class="events-grid">
-            <div class="event-card">
-                <div class="event-date">
-                    <div class="month">Mar</div>
-                    <div class="day">15</div>
-                </div>
-                <div class="event-info">
-                    <h4>Tech Summit 2025</h4>
-                    <div class="venue">San Francisco, CA</div>
-                    <p>Keynote: "The Future of AI-Powered Startups"</p>
-                </div>
-            </div>
-            <div class="event-card">
-                <div class="event-date">
-                    <div class="month">Apr</div>
-                    <div class="day">22</div>
-                </div>
-                <div class="event-info">
-                    <h4>Creator Economy Conference</h4>
-                    <div class="venue">Austin, TX</div>
-                    <p>Panel: "Building a Tech Brand Through Content"</p>
-                </div>
-            </div>
-            <div class="event-card">
-                <div class="event-date">
-                    <div class="month">May</div>
-                    <div class="day">10</div>
-                </div>
-                <div class="event-info">
-                    <h4>Women in Tech Global</h4>
-                    <div class="venue">Virtual Event</div>
-                    <p>Workshop: "From Engineer to Entrepreneur"</p>
-                </div>
-            </div>
-            <div class="event-card">
-                <div class="event-date">
-                    <div class="month">Jun</div>
-                    <div class="day">05</div>
-                </div>
-                <div class="event-info">
-                    <h4>Startup Week NYC</h4>
-                    <div class="venue">New York, NY</div>
-                    <p>Fireside Chat: "Scaling Your First Product"</p>
-                </div>
+            <div class="pricing-card">
+                <h3>Scale</h3>
+                <div class="price">$15,000<span>+</span></div>
+                <ul>
+                    <li>Complex applications</li>
+                    <li>AI integrations</li>
+                    <li>Custom timeline</li>
+                    <li>Unlimited revisions</li>
+                    <li>Dedicated support</li>
+                    <li>Ongoing maintenance</li>
+                </ul>
+                <a href="#cta" class="btn btn-secondary" style="width: 100%; justify-content: center;">Contact Us</a>
             </div>
         </div>
     </section>
 
-    <section class="software" id="software">
-        <div class="section-header">
-            <h2>Software & Products</h2>
-            <p>Products I've built and businesses I've helped scale</p>
-        </div>
-        <div class="software-intro">
-            <p>Beyond speaking and content creation, I'm passionate about building software that solves real problems. Here are some of the products and projects I've worked on.</p>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">🎨</div>
-                <div class="project-content">
-                    <h3>CreatorKit</h3>
-                    <p>A suite of tools for content creators to manage their workflow, schedule posts, and analyze performance.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">SaaS</span>
-                        <span class="project-tag">React</span>
-                        <span class="project-tag">AI</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">📊</div>
-                <div class="project-content">
-                    <h3>StartupMetrics</h3>
-                    <p>Analytics dashboard for early-stage startups to track KPIs and make data-driven decisions.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Analytics</span>
-                        <span class="project-tag">Dashboard</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">🤖</div>
-                <div class="project-content">
-                    <h3>AI Writing Assistant</h3>
-                    <p>An AI-powered tool that helps entrepreneurs craft compelling pitch decks and business plans.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">AI/ML</span>
-                        <span class="project-tag">GPT</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content" id="content">
-        <div class="section-header">
-            <h2>Content & Media</h2>
-            <p>Videos, podcasts, and articles that inspire</p>
-        </div>
-        <div class="content-grid">
-            <div class="content-card">
-                <div class="content-thumbnail">
-                    <div class="play-icon">▶</div>
-                </div>
-                <div class="content-info">
-                    <h4>How I Built a 6-Figure Side Project</h4>
-                    <p>250K views • YouTube</p>
-                </div>
-            </div>
-            <div class="content-card">
-                <div class="content-thumbnail">
-                    <div class="play-icon">🎙️</div>
-                </div>
-                <div class="content-info">
-                    <h4>The Tech Unicorn Podcast</h4>
-                    <p>Weekly insights on tech & startups</p>
-                </div>
-            </div>
-            <div class="content-card">
-                <div class="content-thumbnail">
-                    <div class="play-icon">📝</div>
-                </div>
-                <div class="content-info">
-                    <h4>Featured in Forbes</h4>
-                    <p>"Top 30 Under 30 in Tech"</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="contact-content">
-            <h2>Let's Work Together</h2>
-            <p>Interested in having me speak at your event, collaborate on content, or build something amazing? I'd love to hear from you.</p>
-            <a href="mailto:hello@thetechunicorn.com" class="contact-email">hello@thetechunicorn.com</a>
-            <div class="social-links">
-                <a href="#" class="social-link">X</a>
-                <a href="#" class="social-link">in</a>
-                <a href="#" class="social-link">▶</a>
-                <a href="#" class="social-link">IG</a>
-            </div>
+    <section class="cta" id="cta">
+        <div class="cta-content">
+            <h2>Ready to Build Something Amazing?</h2>
+            <p>Let's turn your idea into reality. Book a free discovery call and let's talk about your project.</p>
+            <a href="mailto:hello@thetechunicorn.com" class="btn btn-primary">Book a Free Call →</a>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 Delia Talks. All rights reserved.</p>
+        <div class="footer-logo">
+            <span>🦄</span>
+            <span>The Tech Unicorn</span>
+        </div>
+        <p>© 2025 The Tech Unicorn. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="mailto:hello@thetechunicorn.com">Contact</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
     </footer>
 </body>
 </html>
