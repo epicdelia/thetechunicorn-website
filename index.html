@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tech Unicorn — Delia Lazarescu · Engineer, Creator, Digital Nomad</title>
-  <meta name="description" content="Tech Unicorn is Delia Lazarescu's software and media studio — AI-powered MVP builds, technical consulting, brand partnerships, and keynotes. Ex-Google engineer, 470K+ audience, fixed-price packages from $3,500." />
+  <meta name="description" content="Tech Unicorn is Delia Lazarescu's software and media studio — AI-powered MVP builds, technical consulting, brand partnerships, and keynotes. Ex-Google engineer, 540K+ audience, fixed-price packages from $3,500." />
   <meta name="theme-color" content="#2e1a3e" />
   <meta property="og:title" content="Tech Unicorn — Delia Lazarescu" />
   <meta property="og:description" content="Ex-Google engineer turned digital nomad. Apps, content, and talks that make tech less scary." />
@@ -252,6 +252,9 @@
   .card:hover .card-icon { transform: rotate(-6deg) scale(1.06); }
   .card h3 { margin-bottom: .55rem; }
   .card p { color: var(--ink-soft); font-size: .98rem; }
+  a.card { display: block; color: inherit; text-decoration: none; }
+  .work .services-grid { grid-template-columns: repeat(4, 1fr); }
+  .work + .services { background: transparent; border-block: 0; }
 
   /* ---------- Content / Platforms ---------- */
   .platforms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -403,6 +406,7 @@
     .about-grid { grid-template-columns: 1fr; }
     .about-label { position: static; }
     .services-grid, .platforms { grid-template-columns: 1fr 1fr; }
+    .work .services-grid { grid-template-columns: 1fr 1fr; }
     .process-steps, .pricing-grid { grid-template-columns: 1fr; }
     .price-card.featured { order: -1; }
   }
@@ -419,6 +423,7 @@
     .nav-links > a:not(.btn) { padding: .8em 1em; }
     .nav-cta { margin-left: 0; margin-top: 6px; }
     .services-grid, .platforms { grid-template-columns: 1fr; }
+    .work .services-grid { grid-template-columns: 1fr; }
     .talk { grid-template-columns: auto 1fr; gap: 14px 18px; }
     .talk-tag { grid-column: 2; justify-self: start; }
     .talk:hover { padding-inline: 8px; }
@@ -442,11 +447,12 @@
       </a>
       <nav class="nav-links" id="nav-links" aria-label="Primary">
         <a href="#about">About</a>
+        <a href="#work">Dev Work</a>
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#content">Content</a>
         <a href="#speaking">Speaking</a>
-        <a href="mailto:hello@thetechunicorn.com?subject=Project%20inquiry" class="btn btn-primary nav-cta">Book an Intro Call</a>
+        <a href="mailto:info@thetechunicorn.com?subject=Project%20inquiry" class="btn btn-primary nav-cta">Book an Intro Call</a>
       </nav>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
@@ -460,25 +466,25 @@
       <div class="hero-copy reveal">
         <span class="eyebrow">Delia Lazarescu · Ex-Google Engineer · Digital Nomad</span>
         <h1>Making tech <em>less scary</em> — from beach cafés in <span class="nowrap">60+ countries.</span></h1>
-        <p class="lede">I'm a software engineer who left Big Tech to build apps, create content for 470K+ people, and prove you don't need a hoodie and a standing desk to ship great software.</p>
+        <p class="lede">I'm a software engineer who left Big Tech to build apps, create content for 540K+ people, and prove you don't need a hoodie and a standing desk to ship great software.</p>
         <div class="hero-actions">
-          <a href="mailto:hello@thetechunicorn.com?subject=Project%20inquiry" class="btn btn-primary btn-lg">Book an Intro Call</a>
+          <a href="mailto:info@thetechunicorn.com?subject=Project%20inquiry" class="btn btn-primary btn-lg">Book an Intro Call</a>
           <a href="#pricing" class="btn btn-ghost btn-lg">See Packages &amp; Pricing</a>
         </div>
         <p class="hero-note">Free 30-minute call · fixed-scope proposal within 48 hours · no surprise invoices</p>
       </div>
       <div class="hero-stats reveal">
         <div class="stat">
-          <span class="stat-num" data-count="472" data-suffix="K+">472K+</span>
-          <span class="stat-label">Combined audience</span>
+          <span class="stat-num" data-count="540" data-suffix="K+">540K+</span>
+          <span class="stat-label">Followers across 6 platforms</span>
         </div>
         <div class="stat">
-          <span class="stat-num" data-count="69">69</span>
-          <span class="stat-label">Countries traveled to</span>
+          <span class="stat-num" data-count="10" data-suffix="M+">10M+</span>
+          <span class="stat-label">Monthly views</span>
         </div>
         <div class="stat">
-          <span class="stat-num">2–4<span class="stat-unit">wks</span></span>
-          <span class="stat-label">Idea → shipped MVP</span>
+          <span class="stat-num" data-count="30" data-suffix="+">30+</span>
+          <span class="stat-label">Claude skills built</span>
         </div>
         <div class="stat">
           <span class="stat-num">ex-G</span>
@@ -495,17 +501,18 @@
   </section>
 
   <!-- ======= TRUSTED BY ======= -->
-  <section class="trusted" aria-label="Brand partners and stages">
+  <section class="trusted" aria-label="Brands I have made campaigns with">
     <div class="container trusted-inner reveal">
-      <span class="trusted-label">Brand partners &amp; stages</span>
+      <span class="trusted-label">Campaigns with</span>
       <ul class="trusted-list">
+        <li>Anthropic</li>
+        <li>NVIDIA</li>
+        <li>AWS</li>
         <li>IBM</li>
+        <li>Salesforce</li>
         <li>Adobe</li>
+        <li>HP</li>
         <li>Airalo</li>
-        <li>Temporal</li>
-        <li>Nomad Cruise</li>
-        <li>Digital Garage Tokyo</li>
-        <li>Vently</li>
       </ul>
     </div>
   </section>
@@ -518,13 +525,47 @@
       </div>
       <div class="about-copy reveal">
         <h2>Engineer first. <em>Storyteller</em> always.</h2>
-        <p>I spent years writing production code at Google before trading the campus for a carry-on. Now I split my time between shipping AI-powered products for clients and explaining technology to a few hundred thousand people who were told it wasn't for them.</p>
+        <p>I was a software engineer at Google, first in Google Cloud and then on Gmail, where I built network reliability test infrastructure in C++. Then I traded the campus for a carry-on. Now I build with AI agents every day and explain technology to half a million people who were told it wasn't for them.</p>
         <p>The thesis behind everything I make: <strong>tech feels scary because it's explained badly.</strong> Whether it's a 30-second reel, a conference keynote, or an MVP built in three weeks, my job is the same — take something intimidating and make it feel obvious.</p>
         <ul class="about-points">
           <li><span>✦</span> CS degree → Google → independent</li>
-          <li><span>✦</span> Built and shipped products from 60+ countries</li>
-          <li><span>✦</span> 470K+ followers across Instagram, YouTube, LinkedIn &amp; TikTok</li>
+          <li><span>✦</span> Hired twice by Anthropic for Claude campaigns; in its creator program</li>
+          <li><span>✦</span> 540K+ followers across Instagram, Threads, TikTok, LinkedIn, YouTube &amp; X</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======= DEVELOPER WORK ======= -->
+  <section class="services work" id="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">02 — Developer work</p>
+        <h2>Things I've <em>built</em> lately</h2>
+        <p class="section-sub">All built with Claude Code. The code is public, with tests and CI.</p>
+      </div>
+      <div class="services-grid">
+        <a class="card reveal" href="https://github.com/epicdelia/AI#flow-speak-messy-get-polished" target="_blank" rel="noopener">
+          <div class="card-icon">🎙️</div>
+          <h3>Flow</h3>
+          <p>Push-to-talk dictation on the web, in Chrome and on Mac. Live transcript, LLM cleanup, measured latency. FastAPI, WebSockets, Swift.</p>
+        </a>
+        <a class="card reveal" href="https://github.com/epicdelia/AI#night-shift-a-claude-code-agent-team" target="_blank" rel="noopener">
+          <div class="card-icon">🌙</div>
+          <h3>Night Shift</h3>
+          <p>Five Claude Code subagents (PM, designer, tech lead, QA, engineer) that work tickets overnight, behind locked acceptance tests and a CI guard.</p>
+        </a>
+        <a class="card reveal" href="https://github.com/epicdelia/AI#youtube-content-pipeline" target="_blank" rel="noopener">
+          <div class="card-icon">🧩</div>
+          <h3>30+ Claude skills</h3>
+          <p>The workflows that run my channel: finding breakout videos, drafting scripts, linting them and running a parallel review panel, with token costs tracked.</p>
+        </a>
+        <a class="card reveal" href="https://www.youtube.com/watch?v=xkh8VpgITpo" target="_blank" rel="noopener">
+          <div class="card-icon">▶️</div>
+          <h3>Claude tutorials</h3>
+          <p>Step-by-step YouTube walkthroughs of Claude Cowork and Claude Code. The Cowork tutorial alone has 36K+ views.</p>
+        </a>
       </div>
     </div>
   </section>
@@ -533,7 +574,7 @@
   <section class="services" id="services">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-eyebrow">02 — Services</p>
+        <p class="section-eyebrow">03 — Services</p>
         <h2>Six ways we can <em>work together</em></h2>
       </div>
       <div class="services-grid">
@@ -555,7 +596,7 @@
         <article class="card reveal">
           <div class="card-icon">🤝</div>
           <h3>Brand Partnerships</h3>
-          <p>Authentic integrations with an engaged, tech-curious audience of 470K+. I only partner with products I'd actually use.</p>
+          <p>Authentic integrations with an engaged, tech-curious audience of 540K+. I only partner with products I'd actually use.</p>
         </article>
         <article class="card reveal">
           <div class="card-icon">🧭</div>
@@ -575,7 +616,7 @@
   <section class="process" id="process">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-eyebrow">03 — How it works</p>
+        <p class="section-eyebrow">04 — How it works</p>
         <h2>From first call to <em>shipped</em> in weeks</h2>
       </div>
       <ol class="process-steps">
@@ -602,7 +643,7 @@
   <section class="pricing" id="pricing">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-eyebrow">04 — Pricing</p>
+        <p class="section-eyebrow">05 — Pricing</p>
         <h2>Packages that <em>pay for themselves</em></h2>
         <p class="section-sub">Every engagement starts with a free intro call and a fixed quote. Prices below are starting points for typical scope.</p>
       </div>
@@ -617,7 +658,7 @@
             <li>Direct access, 24-hour response time</li>
             <li>Cancel anytime, no minimum term</li>
           </ul>
-          <a href="mailto:hello@thetechunicorn.com?subject=Advisory%20retainer" class="btn btn-ghost">Start a Retainer</a>
+          <a href="mailto:info@thetechunicorn.com?subject=Advisory%20retainer" class="btn btn-ghost">Start a Retainer</a>
         </article>
         <article class="price-card featured reveal">
           <span class="price-badge">Most popular</span>
@@ -630,22 +671,22 @@
             <li>30 days of post-launch support included</li>
             <li>You own 100% of the code and IP</li>
           </ul>
-          <a href="mailto:hello@thetechunicorn.com?subject=MVP%20build%20inquiry" class="btn btn-primary">Get a Fixed Quote</a>
+          <a href="mailto:info@thetechunicorn.com?subject=MVP%20build%20inquiry" class="btn btn-primary">Get a Fixed Quote</a>
         </article>
         <article class="price-card reveal">
           <h3>Brand Partnership</h3>
           <p class="price"><span class="price-num">from $5,000</span><span class="price-per">/campaign</span></p>
-          <p class="price-desc">Your product, explained to 470K+ tech-curious people.</p>
+          <p class="price-desc">Your product, explained to 540K+ tech-curious people.</p>
           <ul class="price-list">
             <li>Concept, script, production, and posting</li>
-            <li>384K Instagram + YouTube &amp; LinkedIn distribution</li>
-            <li>54M+ lifetime reach track record</li>
+            <li>384K Instagram + Threads, LinkedIn, YouTube &amp; X distribution</li>
+            <li>10M+ monthly views across platforms</li>
             <li>Usage rights for your own channels</li>
           </ul>
-          <a href="mailto:hello@thetechunicorn.com?subject=Brand%20partnership" class="btn btn-ghost">Request Media Kit</a>
+          <a href="mailto:info@thetechunicorn.com?subject=Brand%20partnership" class="btn btn-ghost">Request Media Kit</a>
         </article>
       </div>
-      <p class="pricing-more reveal">Also available: <strong>AI Integration Sprint</strong> from $8,000 · <strong>Keynotes &amp; workshops</strong> from $7,500 · <strong>B2B content engine</strong> from $6,000/month → <a href="mailto:hello@thetechunicorn.com?subject=Custom%20engagement">ask for a custom quote</a></p>
+      <p class="pricing-more reveal">Also available: <strong>AI Integration Sprint</strong> from $8,000 · <strong>Keynotes &amp; workshops</strong> from $7,500 · <strong>B2B content engine</strong> from $6,000/month → <a href="mailto:info@thetechunicorn.com?subject=Custom%20engagement">ask for a custom quote</a></p>
     </div>
   </section>
 
@@ -653,7 +694,7 @@
   <section class="content" id="content">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-eyebrow">05 — Content</p>
+        <p class="section-eyebrow">06 — Content</p>
         <h2>Where the <em>internet</em> finds me</h2>
       </div>
       <div class="platforms">
@@ -665,15 +706,33 @@
         </a>
         <a class="platform reveal" href="https://www.youtube.com/@Tech.Unicorn" target="_blank" rel="noopener">
           <div class="platform-top"><span class="platform-name">YouTube</span><span class="platform-arrow">↗</span></div>
-          <span class="platform-stat">22K</span>
+          <span class="platform-stat">25K</span>
           <span class="platform-desc">Deep dives, build-alongs, and the occasional unhinged coding challenge from a beach café.</span>
           <span class="platform-handle">@Tech.Unicorn</span>
         </a>
         <a class="platform reveal" href="https://www.linkedin.com/in/delialazarescu/" target="_blank" rel="noopener">
           <div class="platform-top"><span class="platform-name">LinkedIn</span><span class="platform-arrow">↗</span></div>
-          <span class="platform-stat">25K</span>
+          <span class="platform-stat">27K</span>
           <span class="platform-desc">Career honesty, industry takes, and what Big Tech doesn't tell you on the way in — or out.</span>
           <span class="platform-handle">Delia Lazarescu</span>
+        </a>
+        <a class="platform reveal" href="https://www.threads.com/@tech.unicorn" target="_blank" rel="noopener">
+          <div class="platform-top"><span class="platform-name">Threads</span><span class="platform-arrow">↗</span></div>
+          <span class="platform-stat">52K</span>
+          <span class="platform-desc">Quick takes on AI news and what it means for people who build things.</span>
+          <span class="platform-handle">@tech.unicorn</span>
+        </a>
+        <a class="platform reveal" href="https://x.com/tech__unicorn" target="_blank" rel="noopener">
+          <div class="platform-top"><span class="platform-name">X</span><span class="platform-arrow">↗</span></div>
+          <span class="platform-stat">13K</span>
+          <span class="platform-desc">AI tools, automations and experiments, posted as I try them.</span>
+          <span class="platform-handle">@tech__unicorn</span>
+        </a>
+        <a class="platform reveal" href="https://github.com/epicdelia" target="_blank" rel="noopener">
+          <div class="platform-top"><span class="platform-name">GitHub</span><span class="platform-arrow">↗</span></div>
+          <span class="platform-stat">Code</span>
+          <span class="platform-desc">Flow, Night Shift and the content pipeline, with tests and CI.</span>
+          <span class="platform-handle">@epicdelia</span>
         </a>
       </div>
     </div>
@@ -683,36 +742,52 @@
   <section class="speaking" id="speaking">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-eyebrow">06 — Speaking</p>
+        <p class="section-eyebrow">07 — Speaking</p>
         <h2>Recently <em>on stage</em></h2>
       </div>
       <div class="speaking-list">
         <article class="talk reveal">
           <span class="talk-num">01</span>
           <div class="talk-body">
-            <h3>Nomad Cruise</h3>
-            <p>Keynote on building a tech career without an address — engineering, content, and income on the move.</p>
+            <h3>Web Summit, Lisbon</h3>
+            <p>MC for the Creative Summit stage, 2026.</p>
           </div>
-          <span class="talk-tag">Keynote</span>
+          <span class="talk-tag">MC</span>
         </article>
         <article class="talk reveal">
           <span class="talk-num">02</span>
           <div class="talk-body">
-            <h3>Vently Panel</h3>
-            <p>Panel on creator-led businesses and what happens when engineers learn distribution.</p>
+            <h3>ClawCon, Toronto</h3>
+            <p>Speaker, 290+ attendees, 2026.</p>
           </div>
-          <span class="talk-tag">Panel</span>
+          <span class="talk-tag">Talk</span>
         </article>
         <article class="talk reveal">
           <span class="talk-num">03</span>
           <div class="talk-body">
-            <h3>Digital Garage Tokyo</h3>
-            <p>Workshop on practical AI for non-technical teams — making the intimidating feel obvious.</p>
+            <h3>KM &amp; AI Summit</h3>
+            <p>Speaker, 2025.</p>
           </div>
-          <span class="talk-tag">Workshop</span>
+          <span class="talk-tag">Talk</span>
+        </article>
+        <article class="talk reveal">
+          <span class="talk-num">04</span>
+          <div class="talk-body">
+            <h3>CoCreate</h3>
+            <p>Keynote speaker, 2025.</p>
+          </div>
+          <span class="talk-tag">Keynote</span>
+        </article>
+        <article class="talk reveal">
+          <span class="talk-num">05</span>
+          <div class="talk-body">
+            <h3>West Visions, Germany</h3>
+            <p>Paid talk on AI and tech careers to 400+ attendees, 2023.</p>
+          </div>
+          <span class="talk-tag">Talk</span>
         </article>
       </div>
-      <p class="speaking-cta reveal">Booking talks &amp; workshops for 2026 → <a href="mailto:hello@thetechunicorn.com?subject=Speaking%20inquiry">hello@thetechunicorn.com</a></p>
+      <p class="speaking-cta reveal">Booking talks &amp; workshops for 2027 → <a href="mailto:info@thetechunicorn.com?subject=Speaking%20inquiry">info@thetechunicorn.com</a></p>
     </div>
   </section>
 
@@ -722,7 +797,7 @@
       <p class="section-eyebrow light">Let's build something</p>
       <h2>Have an idea that needs <em>shipping?</em></h2>
       <p class="cta-sub">App, campaign, keynote, or something weirder — if it makes tech less scary, I'm interested.</p>
-      <a href="mailto:hello@thetechunicorn.com" class="btn btn-light btn-lg">hello@thetechunicorn.com</a>
+      <a href="mailto:info@thetechunicorn.com" class="btn btn-light btn-lg">info@thetechunicorn.com</a>
     </div>
   </section>
 
@@ -738,10 +813,9 @@
         <a href="https://www.instagram.com/tech.unicorn/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.youtube.com/@Tech.Unicorn" target="_blank" rel="noopener">YouTube</a>
         <a href="https://www.linkedin.com/in/delialazarescu/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.tiktok.com/@tech.unicorn" target="_blank" rel="noopener">TikTok</a>
-        <a href="mailto:hello@thetechunicorn.com">Email</a>
+        <a href="mailto:info@thetechunicorn.com">Email</a>
       </nav>
-      <p class="footer-note">© <span id="year">2026</span> Tech Unicorn — software development, technical consulting &amp; media services · hello@thetechunicorn.com · Made somewhere with good wifi&nbsp;🌴</p>
+      <p class="footer-note">© <span id="year">2026</span> Tech Unicorn — software development, technical consulting &amp; media services · info@thetechunicorn.com · Made somewhere with good wifi&nbsp;🌴</p>
     </div>
   </footer>
 
